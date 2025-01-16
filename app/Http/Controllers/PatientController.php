@@ -7,9 +7,12 @@ use App\Http\Patient;
 
 class PatientController extends Controller
 {
-    //for login page
-    public function login() {
-        return view('login');
+    public function index() {
+        return view('patient.profile');
+    }
+    
+    public function create() {
+        return view('patient.register');
     }
 
     //code for patient registration page needed here

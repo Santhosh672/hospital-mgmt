@@ -197,8 +197,8 @@
       </div>
       <div class="card">
         <p>If you're new here</p>
-        <a href="{{ route('patient.store') }}"><button>Patient Registration</button></a>
-        <a href="{{ route('doctor.store') }}"><button>Doctor Registration</button></a>
+        <a href="{{ url('patient/create') }}"><button>Patient Registration</button></a>
+        <a href="{{ url('doctor/create') }}"><button>Doctor Registration</button></a>
       </div>
     </div>
   </body>

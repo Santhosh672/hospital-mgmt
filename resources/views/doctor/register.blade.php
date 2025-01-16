@@ -192,9 +192,9 @@ select option {
       <div class="logo">VHC</div>
       <nav>
         <ul>
-          <li><a href="./index.html">Home</a></li>
-          <li><a href="./index.html">Contact</a></li>
-          <li><a href="./index.html">About us</a></li>
+          <li><a href="{{ url('/') }}">Home</a></li>
+          <li><a href="{{ url('/') }}">Contact</a></li>
+          <li><a href="{{ url('/') }}">About us</a></li>
         </ul>
       </nav>
     </header>
