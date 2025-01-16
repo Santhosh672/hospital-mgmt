@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doctor Profile</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Italiana&family=Kadwa:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* styles.css */
+
+      body {
+    margin: 0%;
+        font-family: "Kadwa", serif;
+        background-color: #ccfde6;
+      }
+      
+
+      .header {
+        display: flex;
+        justify-content:space-evenly;
+        align-items: center;
+        
+        background-color: #c1f0c7;
+        border-radius: 10px;
+      }
+
+      .header h1 {
+        font-size: 40px;
+        font-family: "Italiana", serif;
+        font-weight: 400;
+        margin-right: 1050px;
+      }
+
+      .header .logout {
+        text-decoration: none;
+        font-size: 16px;
+        color: #333;
+      }
+
+      .main-content {
+        margin-top: 20px;
+      }
+
+      .profile-card {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #c1f0c7;
+        padding: 60px 100px;
+        border-radius: 12px;
+        width: 500px;
+        align-items: center;
+        position: relative;
+        top: 30px;
+        left: 400px;
+      }
+
+      .profile-info {
+        flex: 1;
+      }
+
+      .profile-info h2 {
+        margin-top: 0;
+        font-size: 20px;
+        text-align: center;
+        position: relative;
+        left: 50px;
+      }
+
+      .details p {
+        margin: 8px 0;
+        font-size: 14px;
+        line-height: 2;
+      }
+
+      .edit-btn {
+        margin-top: 30px;
+        display: block;
+        padding: 10px 20px;
+        font-size: 13px;
+        background-color: #52db52;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+
+      .profile-image {
+        flex: 0.5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .image-placeholder {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #333;
+        font-size: 14px;
+      }
+
+      .actions {
+        width: 70%;
+        margin-top: 60px;
+        margin-left: 220px;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+      }
+      .action-btn {
+        
+        margin: 0 100px;
+        padding: 15px 60px;
+        font-size: 16px;
+        background-color: #c1f0c7;
+        border: none;
+        border-radius: 8px;
+        
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      
+
+      .action-btn:hover {
+        background-color: #9cd49c;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>Vel Health Care</h1>
+        <a href="#" class="logout">Log out</a>
+      </header>
+
+      <main class="main-content">
+        <div class="profile-card">
+          <div class="profile-info">
+            <h2>Doctor Profile</h2>
+            <div class="details">
+              <p><strong>Name:</strong></p>
+              <p><strong>Experiance:</strong></p>
+              <p><strong>Specification:</strong></p>
+              <p><strong>DOB:</strong></p>
+              <p><strong>PhNo:</strong></p>
+              <p><strong>Gender:</strong></p>
+              <p><strong>Address:</strong></p>
+              <p><strong>Blood Group:</strong></p>
+            </div>
+            <button class="edit-btn">Edit Profile</button>
+          </div>
+          <div class="profile-image">
+            <div class="image-placeholder">Image</div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="action-btn">My Appointment</button>
+          <button class="action-btn">Add Prescription</button>
+          <button class="action-btn">Make Schedule</button>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
