@@ -187,7 +187,7 @@
         <a href="{{ url('/') }}">Home</a>
         <a href="{{ url('/') }}">Contact</a>
         <a href="{{ url('/') }}">About us</a>
-        <a href="{{ url('/') }}"><button class="login-btn">Login</button></a>
+        <a href="{{ url('login') }}"><button class="login-btn">Login</button></a>
       </nav>
     </div>
     <div class="main">
