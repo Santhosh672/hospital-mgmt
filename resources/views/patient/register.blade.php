@@ -216,22 +216,23 @@
     <main>
       <div class="registration-container">
         <h1>Patient Registration</h1>
-        <form action="#">
+        <form action="{{ route('patient.store') }}" method="POST" enctype="multipart/form-data">
+          @csrf
           <label for="name">Name</label>
-          <input type="text" id="name" placeholder="Enter your name" />
+          <input type="text" name="name" placeholder="Enter your name"/>
 
           <label for="dob">DOB</label>
-          <input type="date" id="dob" />
+          <input type="date" name="dob" />
 
           <label for="gender">Gender</label>
-          <select id="gender">
+          <select name="gender">
             <option value="male">Male</option>
             <option value="female">Female</option>
-            <option value="Others">Others</option>
+            <option value="others">Others</option>
           </select>
 
-          <label for="blood-group">Blood Group</label>
-          <select id="blood-group">
+          <label for="blood_group">Blood Group</label>
+          <select name="blood_group">
             <option value="a+">A+</option>
             <option value="a-">A-</option>
             <option value="b+">B+</option>
@@ -243,22 +244,20 @@
           </select>
 
           <label for="email">Email</label>
-          <input type="email" id="email" placeholder="Enter your email" />
+          <input type="email" name="email" placeholder="Enter your email" />
 
-          <label for="phone">PhNo</label>
-          <input type="tel" id="phone" placeholder="Enter your phone number" />
+          <label for="phone_no">PhNo</label>
+          <input type="tel" name="phone_no" placeholder="Enter your phone number" />
 
           <label for="address">Address</label>
-          <input type="text" id="address" placeholder="Enter your address" />
+          <input type="text" name="address" placeholder="Enter your address" />
 
-          <label for="image-upload" class="upload-label"
-            >Upload your image</label
-          >
-          <input type="file" id="image-upload" class="upload-button" />
+          <div class="mb-4 col-md-4">
+            <label for="image">Upload Your Image</label>
+            <input type="file" name="image">
+          </div>
 
-          <a href="./patientprofile.html"
-            ><button class="submit-button">Submit</button></a
-          >
+          <button class="submit-button">Submit</button>
         </form>
       </div>
     </main>

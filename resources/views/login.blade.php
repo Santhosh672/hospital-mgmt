@@ -156,9 +156,9 @@ form button:hover {
         <div class="logo">VHC</div>
         <nav>
             <ul>
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="./index.html">Contact</a></li>
-                <li><a href="./index.html">About us</a></li>
+                <li><a href="{{ url('/') }}">Home</a></li>
+                <li><a href="{{ url('/') }}">Contact</a></li>
+                <li><a href="{{ url('/') }}">About us</a></li>
             </ul>
         </nav>
     </header>
@@ -167,9 +167,19 @@ form button:hover {
             <h1>Login</h1>
             <form action="#">
                 <label for="user-id">User ID</label>
-                <input type="text" id="user-id" placeholder="Enter your User ID">
+                <input type="text" name="user-id" placeholder="Enter your User ID">
+
                 <label for="password">Password</label>
-                <input type="password" id="password" placeholder="Enter your Password">
+                <input type="password" name="password" placeholder="Enter your Password">
+
+                <div>
+                    <label for="type">Login Type</label>
+                    <select name="type">
+                        <option value="patient">Patient</option>
+                        <option value="doctor">Doctor</option>
+                    </select>
+                </div>
+                
                 <button type="submit">Submit</button>
             </form>
         </div>
