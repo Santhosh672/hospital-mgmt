@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\PatientController;
 use App\Http\Controllers\DoctorController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\AuthController;
 use App\Models\Doctor;
 use Illuminate\Support\Facades\Route;
 
@@ -27,3 +27,4 @@ Route::get('login', function () {
 
 Route::resource('doctor', DoctorController::class);
 Route::resource('patient',PatientController::class);
+Route::post('/login', [AuthController::class, 'login'])->name('user.login');

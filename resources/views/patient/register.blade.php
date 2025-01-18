@@ -246,6 +246,9 @@
           <label for="email">Email</label>
           <input type="email" name="email" placeholder="Enter your email" />
 
+          <label for="password">Password</label>
+          <input type="text" name="password" placeholder="Enter your password" />
+
           <label for="phone_no">PhNo</label>
           <input type="tel" name="phone_no" placeholder="Enter your phone number" />
 

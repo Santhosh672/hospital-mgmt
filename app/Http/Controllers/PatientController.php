@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Patient;
+use Illuminate\Support\Facades\Hash;
 
 class PatientController extends Controller
 {
@@ -21,12 +22,13 @@ class PatientController extends Controller
 
         $file = $request->image;
         $name = rand().'.'.$file->getClientOriginalExtension();
-        $file->move(public_path('patient_profile/'),$name);
+        $file->move(public_path(path: 'patient_profile/'),$name);
         $patient->name = $request->name;
         $patient->dob = $request->dob;
         $patient->gender = $request->gender;
         $patient->blood_group = $request->blood_group;
         $patient->email = $request->email;
+        $patient->password = Hash::make($request->password);
         $patient->phone_no = $request->phone_no;
         $patient->address = $request->address;
         $patient->image = $name;

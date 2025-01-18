@@ -165,22 +165,21 @@ form button:hover {
     <main>
         <div class="login-container">
             <h1>Login</h1>
-            <form action="#">
-                <label for="user-id">User ID</label>
-                <input type="text" name="user-id" placeholder="Enter your User ID">
+            <form action="{{ route('user.login') }}" method="POST">
+                @csrf
+                <label for="email">User Email</label>
+                <input type="email" name="email" placeholder="Enter your Email" required>
 
                 <label for="password">Password</label>
-                <input type="password" name="password" placeholder="Enter your Password">
+                <input type="password" name="password" placeholder="Enter your Password" required>
 
-                <div>
-                    <label for="type">Login Type</label>
-                    <select name="type">
-                        <option value="patient">Patient</option>
-                        <option value="doctor">Doctor</option>
-                    </select>
-                </div>
-                
-                <button type="submit">Submit</button>
+                <label for="type">Login Type</label>
+                <select name="type" required>
+                    <option value="patient">Patient</option>
+                    <option value="doctor">Doctor</option>
+                </select>
+
+                <button type="submit">Login</button>
             </form>
         </div>
     </main>
