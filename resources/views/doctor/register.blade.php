@@ -201,42 +201,45 @@ select option {
     <main>
       <div class="registration-container">
         <h1>Doctor Registration</h1>
-        <form action="#">
+        <form action="{{ route('doctor.store') }}" method="POST" enctype="multipart/form-data">
+          @csrf
           <label for="name">Name</label>
-          <input type="text" id="name" placeholder="Enter your name" />
+          <input type="text" name="name" placeholder="Enter your name" />
 
           <label for="dob">DOB</label>
-          <input type="date" id="dob" />
+          <input type="date" name="dob" />
 
           <label for="gender">Gender</label>
-          <select id="gender">
+          <select name="gender">
             <option value="male">Male</option>
             <option value="female">Female</option>
             <option value="Others">Others</option>
           </select>
 
-          <label for="blood-group">Specification</label>
-          <input
-            type="text"
-            id="blood-group"
-            placeholder="Enter your specification"
-          />
+          <label for="specialization">Specialization</label>
+          <input type="text" name="specialization" placeholder="Enter your Specialization"/>
 
-          <label for="email">Experiance</label>
-          <input type="email" id="email" placeholder="Enter your Experiance" />
+          <label for="experience">Experience</label>
+          <input type="text" name="experience" placeholder="Enter your Experience" />
 
-          <label for="phone">PhNo</label>
-          <input type="tel" id="phone" placeholder="Enter your phone number" />
+          <label for="phone_no">PhNo</label>
+          <input type="tel" name="phone_no" placeholder="Enter your phone number" />
+
+          <label for="email">Email</label>
+          <input type="email" name="email" placeholder="Enter your email address" />
+
+          <label for="password">Password</label>
+          <input type="text" name="password" placeholder="Enter your phone number" />
 
           <label for="address">Address</label>
-          <input type="text" id="address" placeholder="Enter your address" />
+          <input type="text" name="address" placeholder="Enter your address" />
 
-          <label for="image-upload" class="upload-label"
-            >Upload your image</label
-          >
-          <input type="file" id="image-upload" class="upload-button" />
+          <div class="mb-4 col-md-4">
+            <label for="image">Upload Your Image</label>
+            <input type="file" name="image">
+          </div>
 
-          <a href="./doctorprofile.html"><button class="submit-button">Submit</button></a>
+          <button class="submit-button">Submit</button>
         </form>
       </div>
     </main>

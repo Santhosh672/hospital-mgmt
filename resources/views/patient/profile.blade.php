@@ -143,21 +143,19 @@
       <main class="main-content">
         <div class="profile-card">
           <div class="profile-info">
-            <h2>Patient Profile</h2>
-            <div class="details">
-              <p><strong>Name:</strong></p>
-              <p><strong>Email:</strong></p>
-              <p><strong>DOB:</strong></p>
-              <p><strong>PhNo:</strong></p>
-              <p><strong>Gender:</strong></p>
-              <p><strong>Address:</strong></p>
-              <p><strong>Blood Group:</strong></p>
-            </div>
-            <button class="edit-btn">Edit Profile</button>
+          <h2>Patient Profile</h2>
+            <p><strong>Name:</strong> {{ $user->name }}</p>
+            <p><strong>Email:</strong> {{ $user->email }}</p>
+            <p><strong>DOB:</strong> {{ $user->dob }}</p>
+            <p><strong>Phone:</strong> {{ $user->phone_no }}</p>
+            <p><strong>Gender:</strong> {{ $user->gender }}</p>
+            <p><strong>Address:</strong> {{ $user->address }}</p>
+            <p><strong>Blood Group:</strong> {{ $user->blood_group }}</p>
+            <a href="#">Logout</a>
           </div>
-          <div class="profile-image">
-            <div class="image-placeholder">Image</div>
-          </div>
+          <!-- <div class="profile-image">
+            <div class="image-placeholder"><img class="product_img" src="{{ asset('patient_profile/' . $user->image) }}" alt="" style="width: 20"></div>
+          </div> -->
         </div>
 
         <div class="actions">

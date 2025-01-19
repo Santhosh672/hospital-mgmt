@@ -145,21 +145,16 @@
         <div class="profile-card">
           <div class="profile-info">
             <h2>Doctor Profile</h2>
-            <div class="details">
-              <p><strong>Name:</strong></p>
-              <p><strong>Experiance:</strong></p>
-              <p><strong>Specification:</strong></p>
-              <p><strong>DOB:</strong></p>
-              <p><strong>PhNo:</strong></p>
-              <p><strong>Gender:</strong></p>
-              <p><strong>Address:</strong></p>
-              <p><strong>Blood Group:</strong></p>
-            </div>
-            <button class="edit-btn">Edit Profile</button>
+              <p><strong>Name:</strong> {{ $user->name }}</p>
+              <p><strong>Email:</strong> {{ $user->email }}</p>
+              <p><strong>Specialization:</strong> {{ $user->specialization }}</p>
+              <p><strong>Experience:</strong> {{ $user->experience }} years</p>
+              <p><strong>Phone:</strong> {{ $user->phone_no }}</p>
+              <button class="edit-btn">Edit Profile</button>
           </div>
-          <div class="profile-image">
+          <!-- <div class="profile-image">
             <div class="image-placeholder">Image</div>
-          </div>
+          </div> -->
         </div>
 
         <div class="actions">

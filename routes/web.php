@@ -28,3 +28,4 @@ Route::get('login', function () {
 Route::resource('doctor', DoctorController::class);
 Route::resource('patient',PatientController::class);
 Route::post('/login', [AuthController::class, 'login'])->name('user.login');
+Route::get('/profile', [AuthController::class, 'profile'])->name('user.profile');
