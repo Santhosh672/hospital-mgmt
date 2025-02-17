@@ -36,4 +36,12 @@ class DoctorController extends Controller
         $doctor->save(); 
         return redirect('/');
     }
+
+    public function show() {
+        return view('doctor.my-appointment');
+    }
+
+    public function makeschedule() {
+        return view('doctor.schedule');
+    }
 }

@@ -159,8 +159,8 @@
         </div>
 
         <div class="actions">
-          <button class="action-btn">Book Appointment</button>
-          <button class="action-btn">View Doctor</button>
+          <a href="{{ route('patient.bookapp') }}"><button class="action-btn">Book Appointment</button></a>
+          <a href="{{ url('patient/book-appointment') }}"><button class="action-btn">View Doctor</button></a>
           <button class="action-btn">Payment</button>
         </div>
       </main>

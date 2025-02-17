@@ -35,4 +35,8 @@ class PatientController extends Controller
         $patient->save();
         return redirect('/');
     }
+
+    public function show() {
+        return view('patient.book-appointment');
+    }
 }

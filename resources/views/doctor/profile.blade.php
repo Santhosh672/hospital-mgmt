@@ -158,7 +158,7 @@
         </div>
 
         <div class="actions">
-          <button class="action-btn">My Appointment</button>
+          <a href="{{ route('doctor.myapps') }}"><button class="action-btn">My Appointment</button></a>
           <button class="action-btn">Add Prescription</button>
           <button class="action-btn">Make Schedule</button>
         </div>

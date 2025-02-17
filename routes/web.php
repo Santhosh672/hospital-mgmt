@@ -29,3 +29,6 @@ Route::resource('doctor', DoctorController::class);
 Route::resource('patient',PatientController::class);
 Route::post('/login', [AuthController::class, 'login'])->name('user.login');
 Route::get('/profile', [AuthController::class, 'profile'])->name('user.profile');
+Route::get('patient/book-appointment', [PatientController::class, 'bookapp'])->name('patient.bookapp');
+Route::get('doctor/my-appointment', [DoctorController::class, 'myapps'])->name('doctor.myapps');
+Route::get('doctor/schedule', [DoctorController::class, 'makeschedule'])->name('doctor.makeschedule');
