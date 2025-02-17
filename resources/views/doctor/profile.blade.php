@@ -138,7 +138,7 @@
     <div class="container">
       <header class="header">
         <h1>Vel Health Care</h1>
-        <a href="#" class="logout">Log out</a>
+        <a href="{{ url('login') }}" class="logout">Log out</a>
       </header>
 
       <main class="main-content">
