@@ -70,33 +70,18 @@
                 </tr>
             </thead>
             <tbody>
+                @foreach ($doctor as $row)
                 <tr>
-                    <td>101</td>
-                    <td>Dr. Aravind Kumar</td>
-                    <td>Cardiologist</td>
-                    <td>10 years</td>
-                    <td>9876543210</td>
-                    <td><a href="#" class="btn">View</a></td>
+                    <td>{{ $row->id }}</td>
+                    <td>{{ $row->name }}</td>
+                    <td>{{ $row->specialization }}</td>
+                    <td>{{ $row->experience }} years</td>
+                    <td>{{ $row->phone_no }}</td>
+                    <td><button>Action</button></td>
                 </tr>
-                <tr>
-                    <td>102</td>
-                    <td>Dr. Priya Sharma</td>
-                    <td>Neurologist</td>
-                    <td>8 years</td>
-                    <td>9876543211</td>
-                    <td><a href="#" class="btn">View</a></td>
-                </tr>
-                <tr>
-                    <td>103</td>
-                    <td>Dr. Ravi Menon</td>
-                    <td>Orthopedic</td>
-                    <td>12 years</td>
-                    <td>9876543212</td>
-                    <td><a href="#" class="btn">View</a></td>
-                </tr>
+                @endforeach
             </tbody>
         </table>
     </div>
-
 </body>
 </html>

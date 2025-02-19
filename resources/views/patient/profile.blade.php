@@ -143,7 +143,7 @@
       <main class="main-content">
         <div class="profile-card">
           <div class="profile-info">
-          <h2>Patient Profile</h2>
+            <h2>Patient Profile</h2>
             <p><strong>Name:</strong> {{ $user->name }}</p>
             <p><strong>Email:</strong> {{ $user->email }}</p>
             <p><strong>DOB:</strong> {{ $user->dob }}</p>
@@ -151,17 +151,14 @@
             <p><strong>Gender:</strong> {{ $user->gender }}</p>
             <p><strong>Address:</strong> {{ $user->address }}</p>
             <p><strong>Blood Group:</strong> {{ $user->blood_group }}</p>
-            <a href="#">Logout</a>
+
+            <a href={{ route('patient.edit', $user->id) }}> <button class="edit-btn">Edit Profile</button></a>
           </div>
-          <!-- <div class="profile-image">
-            <div class="image-placeholder"><img class="product_img" src="{{ asset('patient_profile/' . $user->image) }}" alt="" style="width: 20"></div>
-          </div> -->
         </div>
 
         <div class="actions">
           <a href="{{ route('patient.bookapp') }}"><button class="action-btn">Book Appointment</button></a>
           <a href="{{ url('patient/book-appointment') }}"><button class="action-btn">View Doctor</button></a>
-          <button class="action-btn">Payment</button>
         </div>
       </main>
     </div>

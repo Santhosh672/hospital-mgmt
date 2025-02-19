@@ -150,17 +150,12 @@
               <p><strong>Specialization:</strong> {{ $user->specialization }}</p>
               <p><strong>Experience:</strong> {{ $user->experience }} years</p>
               <p><strong>Phone:</strong> {{ $user->phone_no }}</p>
-              <button class="edit-btn">Edit Profile</button>
+              <a href="{{ route('doctor.edit', $user->id) }}"><button class="edit-btn">Edit Profile</button></a>
           </div>
-          <!-- <div class="profile-image">
-            <div class="image-placeholder">Image</div>
-          </div> -->
         </div>
 
         <div class="actions">
-          <a href="{{ route('doctor.myapps') }}"><button class="action-btn">My Appointment</button></a>
-          <button class="action-btn">Add Prescription</button>
-          <button class="action-btn">Make Schedule</button>
+          <a href="{{ route('doctor.myapps' ) }}"><button class="action-btn">My Appointment</button></a>
         </div>
       </main>
     </div>
