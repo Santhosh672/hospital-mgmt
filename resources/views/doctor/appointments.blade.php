@@ -45,43 +45,57 @@
         .pending { background-color: #ffc107; color: black; }
         .completed { background-color: #28a745; color: white; }
         .canceled { background-color: #dc3545; color: white; }
-        @media (max-width: 600px) {
-            table, th, td {
-                font-size: 14px;
-            }
+        .btn {
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+            color: white;
+            text-decoration: none;
         }
+        .btn-approve { background-color: #28a745; }
+        .btn-cancel { background-color: #dc3545; }
     </style>
 </head>
 <body>
 
 <div class="container">
     <h2>My Appointments</h2>
+    
+    @if(session('success'))
+        <p style="color: green;">{{ session('success') }}</p>
+    @endif
+    
     <table>
         <tr>
             <th>Patient Name</th>
             <th>Date</th>
-            <th>Time</th>
             <th>Status</th>
+            <th>Action</th>
         </tr>
+        
+        @foreach ($appointments as $appointment)
         <tr>
-            <td>John Doe</td>
-            <td>2025-02-18</td>
-            <td>10:30 AM</td>
-            <td><span class="status pending">Pending</span></td>
+            <td>{{ $patients[$appointment->patient_id]->name ?? 'Unknown' }}</td>
+            <td>{{ $appointment->appointment_date }}</td>
+            <td>
+                <span class="status {{ strtolower($appointment->status) }}">{{ $appointment->status }}</span>
+            </td>
+            <td>
+                <form action="{{ route('appointments.updateStatus', $appointment->id) }}" method="POST" style="display:inline;">
+                    @csrf
+                    <button type="submit" name="status" value="Completed" class="btn btn-approve">Complete</button>
+                </form>
+
+                <form action="{{ route('appointments.updateStatus', $appointment->id) }}" method="POST" style="display:inline;">
+                    @csrf
+                    <button type="submit" name="status" value="Canceled" class="btn btn-cancel">Cancel</button>
+                </form>
+            </td>
         </tr>
-        <tr>
-            <td>Mary Smith</td>
-            <td>2025-02-19</td>
-            <td>12:00 PM</td>
-            <td><span class="status completed">Completed</span></td>
-        </tr>
-        <tr>
-            <td>David Brown</td>
-            <td>2025-02-20</td>
-            <td>2:15 PM</td>
-            <td><span class="status canceled">Canceled</span></td>
-        </tr>
+        @endforeach
     </table>
+
 </div>
 
 </body>

@@ -153,9 +153,8 @@
               <a href="{{ route('doctor.edit', $user->id) }}"><button class="edit-btn">Edit Profile</button></a>
           </div>
         </div>
-
         <div class="actions">
-          <a href="{{ route('doctor.myapps' ) }}"><button class="action-btn">My Appointment</button></a>
+          <a href="{{ route('appointments.doctor' ) }}"><button class="action-btn">My Appointment</button></a>
         </div>
       </main>
     </div>

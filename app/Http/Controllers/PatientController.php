@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Patient;
 use App\Models\Doctor;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 class PatientController extends Controller
 {
@@ -58,8 +59,10 @@ class PatientController extends Controller
     }
 
     public function show() {
+        $userId = Session::get('user_id');
         $doctor = Doctor::get();
-        return view('patient.book-appointment', compact('doctor'));
-        // return dd($doctor);
+        $user = Patient::find($userId);
+        return view('patient.book-appointment', compact('doctor', 'user'));
+        //return dd($user);
     }
 }

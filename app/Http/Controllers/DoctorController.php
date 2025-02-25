@@ -60,10 +60,6 @@ class DoctorController extends Controller
         return redirect('login');
     }
 
-    public function show() {
-        return view('doctor.my-appointment');
-    }
-
     public function makeschedule() {
         return view('doctor.schedule');
     }

@@ -158,7 +158,6 @@
 
         <div class="actions">
           <a href="{{ route('patient.bookapp') }}"><button class="action-btn">Book Appointment</button></a>
-          <a href="{{ url('patient/book-appointment') }}"><button class="action-btn">View Doctor</button></a>
         </div>
       </main>
     </div>
