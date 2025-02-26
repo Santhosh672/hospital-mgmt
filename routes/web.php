@@ -29,6 +29,7 @@ Route::get('/appointments/book', [AppointmentController::class, 'create'])->name
 Route::post('/appointments/store', [AppointmentController::class, 'store'])->name('appointments.store');
 Route::get('/doctor/myappointments', [AppointmentController::class, 'doctorAppointments'])->name('appointments.doctor');
 Route::post('/appointments/{id}/update-status', [AppointmentController::class, 'updateStatus'])->name('appointments.updateStatus');
+Route::get('/my-appointments', [PatientController::class, 'myAppointments'])->name('patient.appointments');
 
 Route::resource('doctor', DoctorController::class);
 Route::resource('patient',PatientController::class);

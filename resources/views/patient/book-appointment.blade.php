@@ -66,7 +66,6 @@
                     <th>Specialization</th>
                     <th>Experience</th>
                     <th>Contact</th>
-                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>

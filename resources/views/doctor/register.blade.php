@@ -234,11 +234,6 @@ select option {
           <label for="address">Address</label>
           <input type="text" name="address" placeholder="Enter your address" />
 
-          <div class="mb-4 col-md-4">
-            <label for="image">Upload Your Image</label>
-            <input type="file" name="image">
-          </div>
-
           <button class="submit-button">Submit</button>
         </form>
       </div>

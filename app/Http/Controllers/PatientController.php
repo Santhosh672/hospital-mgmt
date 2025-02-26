@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Patient;
 use App\Models\Doctor;
+use App\Models\Appointment;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 
@@ -22,9 +23,6 @@ class PatientController extends Controller
     public function store(Request $request) {
         $patient = new Patient;
 
-        $file = $request->image;
-        $name = rand().'.'.$file->getClientOriginalExtension();
-        $file->move(public_path(path: 'patient_profile/'),$name);
         $patient->name = $request->name;
         $patient->dob = $request->dob;
         $patient->gender = $request->gender;
@@ -33,8 +31,8 @@ class PatientController extends Controller
         $patient->password = Hash::make($request->password);
         $patient->phone_no = $request->phone_no;
         $patient->address = $request->address;
-        $patient->image = $name;
         $patient->save();
+
         return redirect('/');
     }
 
@@ -65,4 +63,16 @@ class PatientController extends Controller
         return view('patient.book-appointment', compact('doctor', 'user'));
         //return dd($user);
     }
+
+    public function myAppointments()
+    {
+        $userId = Session::get('user_id');
+        $user = Patient::find($userId);
+        $appointments = Appointment::where('patient_id', $user->id)->get();
+        $doctorIds = $appointments->pluck('doctor_id')->unique();
+        $doctors = Doctor::whereIn('id', $doctorIds)->get()->keyBy('id');
+
+        return view('patient.appointments', compact('user', 'appointments', 'doctors'));
+    }
+
 }

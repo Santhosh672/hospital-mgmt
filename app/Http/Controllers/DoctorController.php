@@ -20,9 +20,6 @@ class DoctorController extends Controller
     public function store(Request $request) {
         $doctor = new Doctor;
 
-        $file = $request->image;
-        $name = rand().'.'.$file->getClientOriginalExtension();
-        $file->move(public_path(path: 'patient_profile/'),$name);
         $doctor->name = $request->name;
         $doctor->dob = $request->dob;
         $doctor->gender = $request->gender;
@@ -32,7 +29,6 @@ class DoctorController extends Controller
         $doctor->password = Hash::make($request->password);
         $doctor->phone_no = $request->phone_no;
         $doctor->address = $request->address;
-        $doctor->image = $name;
 
         $doctor->save(); 
         return redirect('/');

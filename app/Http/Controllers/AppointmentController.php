@@ -53,7 +53,7 @@ class AppointmentController extends Controller
     // Update appointment status (approve/reject)
     public function updateStatus(Request $request, $id)
     {
-        $appointment = Appointment::findOrFail($id);
+        $appointment = Appointment::find($id);
         $appointment->status = $request->status;
         $appointment->save();
 

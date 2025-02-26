@@ -84,7 +84,7 @@
             <td>
                 <form action="{{ route('appointments.updateStatus', $appointment->id) }}" method="POST" style="display:inline;">
                     @csrf
-                    <button type="submit" name="status" value="Completed" class="btn btn-approve">Complete</button>
+                    <button type="submit" name="status" value="Accepted" class="btn btn-approve">Accept</button>
                 </form>
 
                 <form action="{{ route('appointments.updateStatus', $appointment->id) }}" method="POST" style="display:inline;">
