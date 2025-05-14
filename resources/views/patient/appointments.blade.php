@@ -18,7 +18,6 @@
             align-items: center;
             background-color: #c1f0c7;
             border-radius: 10px;
-            padding: 15px;
         }
         .header h1 {
             font-size: 40px;

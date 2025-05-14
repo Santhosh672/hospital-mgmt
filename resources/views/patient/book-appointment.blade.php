@@ -4,58 +4,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Doctors</title>
+    <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Kadwa:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
+            font-family: "Kadwa", serif;
+            background-color: #ccfde6;
         }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #c1f0c7;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .header h1 {
+            font-size: 40px;
+            font-family: "Italiana", serif;
+            font-weight: 400;
+        }
+
+        .header .logout {
+            text-decoration: none;
+            font-size: 16px;
+            color: #333;
+        }
+
         .container {
             width: 80%;
-            margin: 20px auto;
-            background: white;
+            margin: 40px auto;
+            background: #c1f0c7;
             padding: 20px;
-            border-radius: 8px;
+            border-radius: 12px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+
         h2 {
             text-align: center;
             color: #333;
+            font-family: "Italiana", serif;
         }
+
         table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
         }
+
         th, td {
-            padding: 10px;
+            padding: 12px;
             text-align: left;
             border-bottom: 1px solid #ddd;
         }
+
         th {
-            background-color: #4CAF50;
+            background-color: #52db52;
             color: white;
         }
+
         tr:hover {
             background-color: #f1f1f1;
         }
-        .btn {
-            padding: 5px 10px;
-            color: white;
-            background-color: #007BFF;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            text-decoration: none;
+
+        .form-container {
+            margin-top: 30px;
+            text-align: center;
         }
-        .btn:hover {
-            background-color: #0056b3;
+
+        select, input, button {
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        button {
+            background-color: #52db52;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #3ca43c;
         }
     </style>
 </head>
 <body>
-
+    <header class="header">
+        <h1>Vel Health Care</h1>
+        <a href="{{ url('login') }}" class="logout">Log out</a>
+    </header>
+    
     <div class="container">
         <h2>View Doctors</h2>
         <table>
@@ -80,17 +125,18 @@
                 @endforeach
             </tbody>
         </table>
-        <br>
-        <span>
+
+        <div class="form-container">
             <form action="{{ route('appointments.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
-                <label for="category_id">Select Doctor</label>
-                <select value="{{ $row->id }}" name="doctor_id" class="form-control">
+                <label for="doctor_id">Select Doctor:</label>
+                <select name="doctor_id" required>
                     <option value="">Doctors</option>
-                    @foreach ($doctor as $row) 
+                    @foreach ($doctor as $row)
                         <option value="{{ $row->id }}">{{ $row->name }}</option>
                     @endforeach
                 </select>
+                
                 <input type="hidden" name="patient_id" value="{{ $user->id }}">
 
                 <label for="appointment_date">Select Date:</label>
@@ -98,7 +144,7 @@
 
                 <button type="submit">Book Appointment</button>
             </form>
-        </span>
+        </div>
     </div>
 </body>
 </html>
